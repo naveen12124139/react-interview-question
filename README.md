@@ -446,3 +446,98 @@ In this example, the `key` prop is assigned the value of `item.id` for each list
 3. **Stable component reordering**: With keys, React can accurately reorder list items based on their keys. If the order of items changes in the `items` array, React will match and update the corresponding list items accordingly without mistakenly reordering or re-creating unrelated components.
 
 In summary, using keys in React lists provides efficient updates, optimized rendering, and stable reordering of components. They help React track individual elements and determine the differences between subsequent renders, resulting in improved performance and a better user experience. 
+
+## 10. How do you handle forms in React? Explain controlled and uncontrolled components with example.
+**example:-** In React, forms can be handled using either controlled components or uncontrolled components. Let's explore both approaches with examples:
+
+1. **Controlled Components**:
+   Controlled components refer to form elements in which React maintains and controls the state of the form input. The value of the form element is tied to the component's state, and any changes to the input are handled through event handlers that update the state. This approach gives React full control over the form state.
+
+   Here's an example of a controlled component form in React:
+
+   ```jsx
+   import React, { useState } from 'react';
+
+   const ControlledForm = () => {
+     const [name, setName] = useState('');
+     const [email, setEmail] = useState('');
+
+     const handleNameChange = (event) => {
+       setName(event.target.value);
+     };
+
+     const handleEmailChange = (event) => {
+       setEmail(event.target.value);
+     };
+
+     const handleSubmit = (event) => {
+       event.preventDefault();
+       // Handle form submission using the state values (name and email)
+       console.log('Submitted:', name, email);
+     };
+
+     return (
+       <form onSubmit={handleSubmit}>
+         <label>
+           Name:
+           <input type="text" value={name} onChange={handleNameChange} />
+         </label>
+         <label>
+           Email:
+           <input type="email" value={email} onChange={handleEmailChange} />
+         </label>
+         <button type="submit">Submit</button>
+       </form>
+     );
+   };
+
+   export default ControlledForm;
+   ```
+
+   In this example, the `name` and `email` fields are tied to their respective state variables using the `value` prop. The `onChange` event handlers update the state variables whenever the user types in the input fields. When the form is submitted, the `handleSubmit` function is called, which can access the form values from the component's state.
+
+   Controlled components provide a straightforward way to manage form state and perform validations before submitting the form.
+
+2. **Uncontrolled Components**:
+   Uncontrolled components, on the other hand, leave the form state management primarily to the browser. The form elements are controlled by the HTML form controls themselves rather than React. You can still access the form values, but you don't have direct control over their state updates.
+
+   Here's an example of an uncontrolled component form in React:
+
+   ```jsx
+   import React, { useRef } from 'react';
+
+   const UncontrolledForm = () => {
+     const nameRef = useRef(null);
+     const emailRef = useRef(null);
+
+     const handleSubmit = (event) => {
+       event.preventDefault();
+       const name = nameRef.current.value;
+       const email = emailRef.current.value;
+       // Handle form submission using the form input values (name and email)
+       console.log('Submitted:', name, email);
+     };
+
+     return (
+       <form onSubmit={handleSubmit}>
+         <label>
+           Name:
+           <input type="text" ref={nameRef} />
+         </label>
+         <label>
+           Email:
+           <input type="email" ref={emailRef} />
+         </label>
+         <button type="submit">Submit</button>
+       </form>
+     );
+   };
+
+   export default UncontrolledForm;
+   ```
+
+   In this example, the `nameRef` and `emailRef` are created using the `useRef` hook. The input fields are assigned the `ref` prop, which allows accessing their values directly using the `current` property of the ref objects.
+
+   Uncontrolled components are useful in situations where you want to rely on the browser's default behavior for form handling, or when you have a large form where controlled components might introduce unnecessary complexity.
+
+
