@@ -418,3 +418,31 @@ const Counter = () => {
 In this example, the `Counter` component manages its own state using the `useState` hook. The `count` state variable keeps track of the current count value. When the button is clicked, the `increment` function is called, updating the `count` state using the `setCount` function. As the state changes, React re-renders the component, updating the displayed count value.
 
 Overall, state in React provides a way for components to manage and update their internal data, enabling dynamic and interactive user interfaces.
+## 10.What is the significance of keys in React lists?
+**answer:-** The significance of keys in React lists can be better understood with an example. Let's say we have a component that renders a list of items fetched from an API. Each item in the list has a unique `id` property. Here's how the component might look:
+
+```jsx
+import React from 'react';
+
+const ItemList = ({ items }) => {
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default ItemList;
+```
+
+In this example, the `key` prop is assigned the value of `item.id` for each list item. Let's see why keys are significant in this scenario:
+
+1. **Element identity**: The `key` prop helps React identify each list item uniquely. If the `items` array changes between renders, React can match the new items with the previously rendered items using the key values. This way, React can determine which items were added, removed, or re-ordered.
+
+2. **Optimized rendering**: When React re-renders the `ItemList` component, it can optimize the rendering process by preserving the state of individual list items that have the same key. For example, if a user had interacted with an input field inside a list item, React can keep that input field's state intact even if the list is updated.
+
+3. **Stable component reordering**: With keys, React can accurately reorder list items based on their keys. If the order of items changes in the `items` array, React will match and update the corresponding list items accordingly without mistakenly reordering or re-creating unrelated components.
+
+In summary, using keys in React lists provides efficient updates, optimized rendering, and stable reordering of components. They help React track individual elements and determine the differences between subsequent renders, resulting in improved performance and a better user experience. 
