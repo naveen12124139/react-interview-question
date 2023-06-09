@@ -374,3 +374,47 @@ By combining the power of JavaScript with the familiarity of HTML-like syntax, J
      ```
 
 By passing props from parent components to child components, React enables the composition of reusable and modular UI components. This promotes code reusability, separation of concerns, and facilitates the building of complex and dynamic user interfaces.
+
+## 9. Describe the concept of state in React. How is it different from props?
+**answer:-** In React, state is a built-in feature that allows components to manage and store data internally. Unlike props, which are passed from parent components and are read-only, state is internal and can be changed by the component itself.
+
+Here are key aspects of the concept of state in React and how it differs from props:
+
+1. **Component-specific data**: State is used to manage data that is specific to a particular component. It represents the current state or condition of the component and can be used to track and update information that affects the component's behavior and rendering.
+
+2. **Internal and mutable**: State is defined and managed within a component. It can be modified using special functions provided by React, such as `setState()` or hooks like `useState()`. The component itself has control over when and how the state is updated.
+
+3. **Local scope**: Each component has its own state, which is not accessible or modifiable by other components. State is encapsulated within the component, ensuring data privacy and preventing unintended changes.
+
+4. **Component re-rendering**: When the state of a component changes, React automatically triggers a re-rendering of the component, updating the UI to reflect the new state. This allows for dynamic and responsive user interfaces.
+
+5. **Initialization and default values**: State can be initialized with default values when the component is created. This helps in setting the initial state of the component. State values can be primitive data types (strings, numbers, booleans) or complex objects.
+
+6. **Props vs. State**: While props and state both store data in React components, they have key differences:
+   - Props are passed down from parent components and are read-only for the component that receives them. They are used for communication between components and provide external data to the component.
+   - State is managed internally within the component and is mutable. It is used for managing component-specific data and representing the current state of the component. State can be updated by the component itself using special functions or hooks.
+
+Here's a simple example that demonstrates the usage of state in a React component:
+
+```jsx
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+```
+
+In this example, the `Counter` component manages its own state using the `useState` hook. The `count` state variable keeps track of the current count value. When the button is clicked, the `increment` function is called, updating the `count` state using the `setCount` function. As the state changes, React re-renders the component, updating the displayed count value.
+
+Overall, state in React provides a way for components to manage and update their internal data, enabling dynamic and interactive user interfaces.
