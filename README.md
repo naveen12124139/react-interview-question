@@ -305,3 +305,72 @@ In summary, the Virtual DOM in React provides a performant and efficient way to 
 Despite these differences, JSX is still JavaScript at its core. It gets transpiled into regular JavaScript code that React can understand. This allows React to efficiently update and render the UI based on the JSX markup defined in the components.
 
 By combining the power of JavaScript with the familiarity of HTML-like syntax, JSX provides a concise and expressive way to build React components, making the code more readable, maintainable, and intuitive for developers.
+
+## 8.  What are props in React? How are they used to pass data between components?
+**answer:-** In React, props (short for properties) are a way to pass data from a parent component to its child component(s). Props are read-only and immutable, meaning they cannot be modified by the child component. Here's how props work and how they are used to pass data between components:
+
+1. **Passing Props**:
+   - Props are passed from a parent component to a child component by adding attributes to the child component's JSX element. These attributes are assigned values, which can be static or dynamic (computed using JavaScript expressions).
+   - Example: `<ChildComponent name="John" age={25} />`
+
+2. **Accessing Props**:
+   - In the child component, props can be accessed as an argument to the component's function or as a property of the `this.props` object (in class components).
+   - Example in functional components:
+     ```jsx
+     const ChildComponent = (props) => {
+       console.log(props.name); // "John"
+       console.log(props.age); // 25
+
+       // ...
+     };
+     ```
+   - Example in class components:
+     ```jsx
+     class ChildComponent extends React.Component {
+       render() {
+         console.log(this.props.name); // "John"
+         console.log(this.props.age); // 25
+
+         // ...
+       }
+     }
+     ```
+
+3. **Using Props**:
+   - Once the child component has received the props, it can use them in various ways. For example, it can display the passed data, use it for conditional rendering or computations, or pass it further down to other child components.
+   - Example:
+     ```jsx
+     const ChildComponent = (props) => {
+       return (
+         <div>
+           <p>Name: {props.name}</p>
+           <p>Age: {props.age}</p>
+         </div>
+       );
+     };
+     ```
+
+4. **Dynamic Props**:
+   - Props can be dynamic, meaning they can be computed or derived from variables, state, or other components' props.
+   - Example:
+     ```jsx
+     const name = "John";
+     const age = 25;
+
+     return (
+       <ChildComponent name={name} age={age} />
+     );
+     ```
+
+5. **Nested Components**:
+   - Props can be passed through multiple levels of nested components, allowing data to flow from a top-level parent component to deeply nested child components.
+   - Example:
+     ```jsx
+     <ParentComponent>
+       <ChildComponent>
+         <GrandchildComponent />
+       </ChildComponent>
+     </ParentComponent>
+     ```
+
+By passing props from parent components to child components, React enables the composition of reusable and modular UI components. This promotes code reusability, separation of concerns, and facilitates the building of complex and dynamic user interfaces.
