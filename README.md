@@ -160,3 +160,60 @@ In this example, we have an `ExampleComponent` class component with a `count` st
 - `render()`: This method is responsible for rendering the component's JSX markup. In this example, it renders a `<p>` element displaying the `count` value and a button that triggers the `incrementCount()` method.
 
 By logging messages to the console at different stages, you can observe the lifecycle of the `ExampleComponent`. When the component is mounted, updated, or unmounted, the corresponding lifecycle methods will be triggered, allowing you to perform specific actions based on the component's lifecycle.
+
+## 4. explain react lifecycle method in functional component?
+answer:- In functional components, the React lifecycle methods are replaced with React hooks. Hooks are functions that allow you to use state and other React features in functional components without the need for classes. Let's go through the equivalent hooks for the lifecycle methods we discussed earlier:
+
+1. Mounting:
+   - `useState()`: This hook allows you to declare and use state variables in a functional component. It replaces the need for a constructor and state initialization.
+   - `useEffect()`: This hook is used to perform side effects in functional components. It combines the functionality of `componentDidMount` and `componentDidUpdate`.
+
+2. Updating:
+   - `useEffect()`: As mentioned earlier, this hook is used for performing side effects. It is called after every render, including the initial render and subsequent updates.
+   - `useEffect()` can optionally include a dependency array as a second argument. This array specifies the values that the effect depends on. If the dependencies change, the effect will be re-executed. This is similar to the behavior of `shouldComponentUpdate`.
+
+3. Unmounting:
+   - `useEffect()`: This hook can also be used to clean up resources or perform any necessary cleanup actions when a component is unmounted. By returning a cleanup function within the effect, it will be called when the component is about to unmount.
+
+Here's an example of how you can use React hooks to replicate the functionality of the previous class component example:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const ExampleComponent = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('Component mounted');
+    return () => {
+      console.log('Component will unmount');
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('Component updated');
+    console.log('Count changed');
+  }, [count]);
+
+  const incrementCount = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+In this functional component example, we use the `useState` hook to declare the `count` state variable and the `setCount` function to update it. The `useEffect` hook is used to replicate the behavior of `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+The first `useEffect` hook is called only once when the component is mounted. We log a message to the console to indicate that the component has mounted. By returning a cleanup function, we ensure that it will be called when the component is about to unmount.
+
+The second `useEffect` hook is called whenever the `count` state changes. We log a message to the console when the component updates and specifically when the `count` changes.
+
+Overall, React hooks provide a more concise and intuitive way to handle state and lifecycle behavior in functional components.
