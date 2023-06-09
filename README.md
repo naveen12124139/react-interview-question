@@ -286,3 +286,22 @@ These features make React a powerful and popular choice for building modern, int
    This efficient update process provided by the Virtual DOM allows React to handle frequent UI updates and complex UI hierarchies without sacrificing performance.
 
 In summary, the Virtual DOM in React provides a performant and efficient way to manage and update the UI. It minimizes the number of DOM manipulations, optimizes rendering, and provides a developer-friendly programming model, making React a powerful tool for building interactive and responsive user interfaces.
+
+## 7. What is JSX in React? How does it differ from regular JavaScript?
+**answer:-** JSX (JavaScript XML) is an extension to the JavaScript language syntax used in React. It allows you to write HTML-like code directly within JavaScript, making it easier to describe and visualize the structure of UI components. JSX is not a requirement for using React, but it is widely adopted and recommended as it simplifies the creation of React components. Here's how JSX differs from regular JavaScript:
+
+1. **HTML-like Syntax**: JSX resembles HTML syntax, allowing you to write tags, attributes, and nested elements. For example, you can write `<div>` or `<p>` tags within JavaScript code. This makes the code more readable and familiar to web developers.
+
+2. **Embedding Expressions**: JSX allows you to embed JavaScript expressions within curly braces `{}`. This allows you to dynamically compute and insert values into the markup. For example, you can write `{count}` to display the value of a variable `count` within a JSX element.
+
+3. **Component Composition**: With JSX, you can easily compose and nest components by using their names as if they were HTML tags. For example, you can write `<Header />` to render a `Header` component within another component.
+
+4. **Babel Transformation**: JSX is not natively understood by browsers. To make JSX code executable, it needs to be transformed into regular JavaScript. Tools like Babel are commonly used to perform this transformation, converting JSX syntax into function calls that create React elements.
+
+5. **One-Way Data Binding**: JSX follows a unidirectional data flow in React. It allows you to pass data from parent components to child components using props. You can specify props within JSX elements by passing them as attributes. For example, `<MyComponent name="John" age={25} />`.
+
+6. **JavaScript Expressions Only**: While JSX resembles HTML, it's important to note that JSX is not HTML. It uses JavaScript expressions within curly braces, but you cannot use HTML-specific features like class attributes (use `className` instead) or inline styles (use the `style` attribute with a JavaScript object).
+
+Despite these differences, JSX is still JavaScript at its core. It gets transpiled into regular JavaScript code that React can understand. This allows React to efficiently update and render the UI based on the JSX markup defined in the components.
+
+By combining the power of JavaScript with the familiarity of HTML-like syntax, JSX provides a concise and expressive way to build React components, making the code more readable, maintainable, and intuitive for developers.
