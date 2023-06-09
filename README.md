@@ -418,7 +418,7 @@ const Counter = () => {
 In this example, the `Counter` component manages its own state using the `useState` hook. The `count` state variable keeps track of the current count value. When the button is clicked, the `increment` function is called, updating the `count` state using the `setCount` function. As the state changes, React re-renders the component, updating the displayed count value.
 
 Overall, state in React provides a way for components to manage and update their internal data, enabling dynamic and interactive user interfaces.
-## 10.What is the significance of keys in React lists?
+## 10. What is the significance of keys in React lists?
 **answer:-** The significance of keys in React lists can be better understood with an example. Let's say we have a component that renders a list of items fetched from an API. Each item in the list has a unique `id` property. Here's how the component might look:
 
 ```jsx
@@ -447,7 +447,7 @@ In this example, the `key` prop is assigned the value of `item.id` for each list
 
 In summary, using keys in React lists provides efficient updates, optimized rendering, and stable reordering of components. They help React track individual elements and determine the differences between subsequent renders, resulting in improved performance and a better user experience. 
 
-## 10. How do you handle forms in React? Explain controlled and uncontrolled components with example.
+## 11. How do you handle forms in React? Explain controlled and uncontrolled components with example.
 **example:-** In React, forms can be handled using either controlled components or uncontrolled components. Let's explore both approaches with examples:
 
 1. **Controlled Components**:
