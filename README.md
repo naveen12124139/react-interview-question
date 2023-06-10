@@ -14,14 +14,14 @@ Soon you guys will find all the important react interview questions
 10. <a href="#10">Describe the concept of state in React. How is it different from props?</a>
 11. <a href="#11">What is the purpose of lifecycle methods in React? Can you name a few of them?</a>
 12. <a href="#12">What is the significance of keys in React lists?</a>
-13. <a href="#13" id="13" >How do you handle forms in React? Explain controlled and uncontrolled components.</a>
-14. <a href="#14" id="14" >What are React hooks? Can you name a few commonly used hooks?</a>
-15. <a href="#15" id="15" >Explain the concept of React context and when would you use it.</a>
-16. <a href="#16" id="16" >How do you handle errors in React components? Can you explain the Error Boundary concept?</a>
-17. <a href="#17" id="17" >What is React Router and how does it help with routing in a React application?</a>
-18. <a href="#18" id="18" >Explain the concept of controlled and uncontrolled components in React.</a>
-19. <a href="#19" id="19" >What are some performance optimization techniques in React?</a>
-20. <a href="#20" id="20" >How do you handle component communication in React? Can you explain the concept of lifting state up?</a>
+13. <a href="#13">How do you handle forms in React? Explain controlled and uncontrolled components.</a>
+14. <a href="#14">What are React hooks? Can you name a few commonly used hooks?</a>
+15. <a href="#15">Explain the concept of React context and when would you use it.</a>
+16. <a href="#16">How do you handle errors in React components? Can you explain the Error Boundary concept?</a>
+17. <a href="#17">What is React Router and how does it help with routing in a React application?</a>
+18. <a href="#18">Explain the concept of controlled and uncontrolled components in React.</a>
+19. <a href="#19">What are some performance optimization techniques in React?</a>
+20. <a href="#20">How do you handle component communication in React? Can you explain the concept of lifting state up?</a>
 21. <a href="#21" id="21" >What is the significance of React Fragments? When and why would you use them?</a>
 22. <a href="#22" id="22" >What are Higher-Order Components (HOCs)? How do they work in React?</a>
 23. <a href="#23" id="23" >How does React differ from other JavaScript frameworks like Angular or Vue.js?</a>
