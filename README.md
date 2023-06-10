@@ -1286,8 +1286,8 @@ The choice between controlled and uncontrolled components depends on the specifi
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## 19. <a id="#19">What are some performance optimization techniques in React?</a>
-**answer:- ** There are several performance optimization techniques you can employ in React to improve the efficiency and responsiveness of your applications. Here are some commonly used techniques:
+## 19. <a id="19">What are some performance optimization techniques in React?</a>
+**answer:-** There are several performance optimization techniques you can employ in React to improve the efficiency and responsiveness of your applications. Here are some commonly used techniques:
 
 1. **React.memo()**: The `React.memo()` higher-order component is used to memoize functional components and prevent unnecessary re-renders. It works similarly to `React.PureComponent` for class components. By wrapping a component with `React.memo()`, React will only re-render the component if its props have changed. Example:
 ```jsx
