@@ -22,6 +22,8 @@ Soon you guys will find all the important react interview questions
 18. <a href="#18">Explain the concept of controlled and uncontrolled components in React.</a>
 19. <a href="#19">What are some performance optimization techniques in React?</a>
 20. <a href="#20"> explain the concept of lifting state up?</a>
+
+<span id="top2"></span>
 21. <a href="#21" id="21" >What is the significance of React Fragments? When and why would you use them?</a>
 22. <a href="#22" id="22" >What are Higher-Order Components (HOCs)? How do they work in React?</a>
 23. <a href="#23" id="23" >How does React differ from other JavaScript frameworks like Angular or Vue.js?</a>
@@ -1324,7 +1326,7 @@ By employing these techniques, you can improve the performance of your React app
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## 20. <a href="#20"> explain the concept of lifting state up?</a>
+## 20. <a id="20"> explain the concept of lifting state up?</a>
 **answer:-** Certainly! The concept of "lifting state up" in React involves moving the state from a child component to its parent component to facilitate sharing and synchronization of data. Let's explore an example to illustrate how lifting state up works.
 
 Consider a simple application that displays a temperature converter, allowing the user to input a temperature value in either Celsius or Fahrenheit and displaying the converted value in both units.
@@ -1399,3 +1401,5 @@ By lifting the state up to the `TemperatureConverter` component, both child comp
 By using this approach, the parent component acts as the source of truth for the shared state, and any changes made to the state are propagated down to the child components. This enables effective communication and synchronization of data between components.
 
 Lifting state up is particularly useful when multiple components need access to the same data or when changes in one component need to be reflected in another. It promotes reusability, separation of concerns, and helps maintain a single source of truth for the shared data.
+
+<a href="#top1"> Back to top &#8593;</a>
