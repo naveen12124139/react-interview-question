@@ -241,7 +241,7 @@ In addition to these methods, React introduced a new set of lifecycle methods ca
 
 It's important to note that with the introduction of React 17, some lifecycle methods like `componentWillMount`, `componentWillReceiveProps`, and `componentWillUpdate` have been deprecated and removed in favor of other methods or hooks to promote better code organization and readability.
 
-## 3. explain react lifecycle method with an example?
+## 3. <a id="3">explain react lifecycle method with an example?</a>
 **answer:-** Certainly! Let's go through an example that demonstrates the React lifecycle methods in action:
 
 ```jsx
@@ -305,7 +305,7 @@ In this example, we have an `ExampleComponent` class component with a `count` st
 
 By logging messages to the console at different stages, you can observe the lifecycle of the `ExampleComponent`. When the component is mounted, updated, or unmounted, the corresponding lifecycle methods will be triggered, allowing you to perform specific actions based on the component's lifecycle.
 
-## 4. explain react lifecycle method in functional component?
+## 4. <a id="4">explain react lifecycle method in functional component?</a>
 **answer:-** In functional components, the React lifecycle methods are replaced with React hooks. Hooks are functions that allow you to use state and other React features in functional components without the need for classes. Let's go through the equivalent hooks for the lifecycle methods we discussed earlier:
 
 1. Mounting:
@@ -362,7 +362,7 @@ The second `useEffect` hook is called whenever the `count` state changes. We log
 
 Overall, React hooks provide a more concise and intuitive way to handle state and lifecycle behavior in functional components.
 
-## 5.  What is React and what are its key features?
+## 5.  <a id="5">What is React and what are its key features?</a>
 answer:- React is an open-source JavaScript library developed by Facebook. It is primarily used for building user interfaces (UIs) for web applications. React follows a component-based architecture, allowing developers to create reusable UI components and efficiently manage the state of those components. Here are some key features of React:
 
 1. **Component-Based Architecture**: React promotes building applications using reusable UI components. Components encapsulate their own logic and rendering, making it easier to develop, test, and maintain complex user interfaces.
@@ -383,7 +383,7 @@ answer:- React is an open-source JavaScript library developed by Facebook. It is
 
 These features make React a powerful and popular choice for building modern, interactive, and performant user interfaces for web and mobile applications.
 
-## 6. Explain the Virtual DOM and its advantages in React? 
+## 6. <a id="6">Explain the Virtual DOM and its advantages in React? </a>
 **answer:-** The Virtual DOM (VDOM) is a virtual representation of the actual DOM (Document Object Model) used by web browsers. In React, the Virtual DOM is a lightweight copy of the real DOM that React maintains and manipulates to efficiently update and render UI components. Here's how the Virtual DOM works and its advantages:
 
 1. **Virtual DOM Working Mechanism**:
@@ -431,7 +431,7 @@ These features make React a powerful and popular choice for building modern, int
 
 In summary, the Virtual DOM in React provides a performant and efficient way to manage and update the UI. It minimizes the number of DOM manipulations, optimizes rendering, and provides a developer-friendly programming model, making React a powerful tool for building interactive and responsive user interfaces.
 
-## 7. What is JSX in React? How does it differ from regular JavaScript?
+## 7.<a id="7"> What is JSX in React? How does it differ from regular JavaScript?</a>
 **answer:-** JSX (JavaScript XML) is an extension to the JavaScript language syntax used in React. It allows you to write HTML-like code directly within JavaScript, making it easier to describe and visualize the structure of UI components. JSX is not a requirement for using React, but it is widely adopted and recommended as it simplifies the creation of React components. Here's how JSX differs from regular JavaScript:
 
 1. **HTML-like Syntax**: JSX resembles HTML syntax, allowing you to write tags, attributes, and nested elements. For example, you can write `<div>` or `<p>` tags within JavaScript code. This makes the code more readable and familiar to web developers.
@@ -450,7 +450,7 @@ Despite these differences, JSX is still JavaScript at its core. It gets transpil
 
 By combining the power of JavaScript with the familiarity of HTML-like syntax, JSX provides a concise and expressive way to build React components, making the code more readable, maintainable, and intuitive for developers.
 
-## 8.  What are props in React? How are they used to pass data between components?
+## 8.  <a id="8"> What are props in React? How are they used to pass data between components?</a>
 **answer:-** In React, props (short for properties) are a way to pass data from a parent component to its child component(s). Props are read-only and immutable, meaning they cannot be modified by the child component. Here's how props work and how they are used to pass data between components:
 
 1. **Passing Props**:
@@ -519,7 +519,7 @@ By combining the power of JavaScript with the familiarity of HTML-like syntax, J
 
 By passing props from parent components to child components, React enables the composition of reusable and modular UI components. This promotes code reusability, separation of concerns, and facilitates the building of complex and dynamic user interfaces.
 
-## 9. Describe the concept of state in React. How is it different from props?
+## 9. <a id="9">Describe the concept of state in React. How is it different from props?</a>
 **answer:-** In React, state is a built-in feature that allows components to manage and store data internally. Unlike props, which are passed from parent components and are read-only, state is internal and can be changed by the component itself.
 
 Here are key aspects of the concept of state in React and how it differs from props:
@@ -562,7 +562,7 @@ const Counter = () => {
 In this example, the `Counter` component manages its own state using the `useState` hook. The `count` state variable keeps track of the current count value. When the button is clicked, the `increment` function is called, updating the `count` state using the `setCount` function. As the state changes, React re-renders the component, updating the displayed count value.
 
 Overall, state in React provides a way for components to manage and update their internal data, enabling dynamic and interactive user interfaces.
-## 10. What is the significance of keys in React lists?
+## 10. <a id="10">What is the significance of keys in React lists?</a>
 **answer:-** The significance of keys in React lists can be better understood with an example. Let's say we have a component that renders a list of items fetched from an API. Each item in the list has a unique `id` property. Here's how the component might look:
 
 ```jsx
@@ -591,7 +591,7 @@ In this example, the `key` prop is assigned the value of `item.id` for each list
 
 In summary, using keys in React lists provides efficient updates, optimized rendering, and stable reordering of components. They help React track individual elements and determine the differences between subsequent renders, resulting in improved performance and a better user experience. 
 
-## 11. How do you handle forms in React? Explain controlled and uncontrolled components with example.
+## 11. <a id="11">How do you handle forms in React? Explain controlled and uncontrolled components with example.</a>
 **example:-** In React, forms can be handled using either controlled components or uncontrolled components. Let's explore both approaches with examples:
 
 1. **Controlled Components**:
