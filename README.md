@@ -1455,3 +1455,50 @@ Both examples achieve the same result but with a different syntax.
 In summary, React Fragments offer a way to group multiple elements without introducing an extra wrapping element. They provide a cleaner JSX syntax, help maintain a logical component structure, and can improve performance by reducing the complexity of the DOM tree.
 
 <a href="#top2"> Back to top &#8593;</a>
+
+## 22. <a id="22">What are Higher-Order Components (HOCs)? How do they work in React?</a>
+**answer:-** Higher-Order Components (HOCs) are a design pattern in React that allows you to enhance or modify the behavior of a component by wrapping it with another component. HOCs are not a feature of React itself but rather a pattern made possible by the compositional nature of React components.
+
+In simple terms, a Higher-Order Component is a function that takes a component as input and returns a new enhanced component as output. The HOC acts as a wrapper around the original component, providing additional props, modifying the behavior, or adding new functionality.
+
+Here's an example of a Higher-Order Component:
+
+```jsx
+import React from 'react';
+
+const withLogger = (WrappedComponent) => {
+  return class extends React.Component {
+    componentDidMount() {
+      console.log('Component was mounted');
+    }
+
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+};
+
+const MyComponent = (props) => {
+  return <div>{props.text}</div>;
+};
+
+const EnhancedComponent = withLogger(MyComponent);
+```
+
+In this example, the `withLogger` function is a Higher-Order Component. It takes `MyComponent` as input and returns a new component that wraps `MyComponent`. The returned component has an additional lifecycle method `componentDidMount` which logs a message when the component is mounted. It also passes all the props received to the `WrappedComponent`.
+
+By using the `withLogger` HOC, you can enhance `MyComponent` with the logging behavior without modifying `MyComponent` itself. You can then use the `EnhancedComponent` instead of the original component in your application.
+
+HOCs can be used to achieve various functionalities, such as:
+
+1. Reusability: HOCs allow you to encapsulate common functionalities and apply them to multiple components without duplicating code. For example, you can create an authentication HOC that adds authentication-related props and logic to any component.
+
+2. Code organization: HOCs help separate concerns and keep the codebase clean. You can isolate complex functionalities into separate HOCs, making components focused on their primary purpose and enhancing them with additional features when needed.
+
+3. Props manipulation: HOCs can modify or filter props passed to the wrapped component, allowing you to inject additional data or manipulate the behavior of the component.
+
+It's worth noting that with the introduction of React hooks in React 16.8, higher-order components are not the only way to achieve component composition and reusability. Hooks like `useEffect` and `useContext` provide more direct ways to add functionality to components. However, HOCs remain a powerful pattern, especially when working with older React codebases or when composing class components.
+
+In summary, Higher-Order Components (HOCs) are functions that wrap components to enhance or modify their behavior. They provide a way to reuse and compose functionalities, separate concerns, and manipulate props. While React hooks offer alternative ways to achieve similar goals, HOCs remain a valuable pattern in React development.
+
+<a href="#top2"> Back to top &#8593;</a>
