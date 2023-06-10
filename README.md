@@ -24,6 +24,7 @@ Soon you guys will find all the important react interview questions
 20. <a href="#20"> explain the concept of lifting state up?</a>
 
 <span id="top2"></span>
+
 21. <a href="#21" id="21" >What is the significance of React Fragments? When and why would you use them?</a>
 22. <a href="#22" id="22" >What are Higher-Order Components (HOCs)? How do they work in React?</a>
 23. <a href="#23" id="23" >How does React differ from other JavaScript frameworks like Angular or Vue.js?</a>
