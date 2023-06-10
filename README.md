@@ -852,7 +852,7 @@ In summary, using keys in React lists provides efficient updates, optimized rend
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## <a id="14">14. What are React hooks? Can you name a few commonly used hooks?</a>
+## 14. <a id="14">What are React hooks? Can you name a few commonly used hooks?</a>
 **answer:-** React hooks are functions that allow functional components to have state and lifecycle features, which were traditionally available only in class components. They provide a way to write reusable logic and manage component state without the need for class components.
 
 Here are a few commonly used React hooks:
@@ -940,4 +940,57 @@ function MyComponent() {
 ```
 
 These are just a few examples of commonly used React hooks. React provides several other hooks like `useCallback`, `useMemo`, and `useRef`, each serving specific purposes to enhance functional components. Hooks enable developers to write cleaner and more modular code by separating concerns and reusing logic across components.
+<a href="#top1"> Back to top &#8593;</a>
+
+
+## 15. <a id="15">Explain the concept of React context and when would you use it ?</a>
+**answer:-** React context is a feature that allows you to share data between components without passing props manually through every level of the component tree. It provides a way to pass down values to multiple components without the need for intermediate components to explicitly receive and pass the data.
+
+Context consists of two main parts: a provider and one or more consumers. The provider component wraps a subtree of components and provides the context value to them. The consumer components can access the context value anywhere within the subtree, regardless of how deep they are in the component hierarchy.
+
+Here's an example to illustrate the usage of React context:
+
+```jsx
+// Create a context
+const ThemeContext = React.createContext();
+
+// Create a component that provides the context value
+function ThemeProvider({ children }) {
+  const theme = 'dark'; // Context value
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// Create a component that consumes the context value
+function ThemeConsumer() {
+  return (
+    <ThemeContext.Consumer>
+      {theme => <p>Current theme: {theme}</p>}
+    </ThemeContext.Consumer>
+  );
+}
+
+// Usage of the context in the component tree
+function App() {
+  return (
+    <ThemeProvider>
+      <div>
+        <h1>My App</h1>
+        <ThemeConsumer />
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+In this example, we create a `ThemeProvider` component that wraps the `App` component with a context provider. The `ThemeProvider` sets the context value as `'dark'`. The `ThemeConsumer` component is a consumer of the context value, and it renders the current theme value passed through the context.
+
+By using context, we eliminate the need to pass the theme value explicitly through props from the `ThemeProvider` component to the `ThemeConsumer` component. The `ThemeConsumer` component can directly access the theme value from the context within the component hierarchy.
+
+React context is beneficial in situations where you have data or settings that need to be accessible by multiple components throughout the component tree. It helps simplify prop drilling and makes the code cleaner and more maintainable. Common use cases for React context include themes, user authentication, language settings, or any other global data that multiple components need to access.
+
 <a href="#top1"> Back to top &#8593;</a>
