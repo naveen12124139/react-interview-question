@@ -650,7 +650,83 @@ Overall, state in React provides a way for components to manage and update their
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## 11. <a id="11">What is the significance of keys in React lists?</a>
+## 11. <a id="11"> What is the purpose of lifecycle methods in React class component? Can you name a few of them with example?</a>
+**answer:-** In React class components, lifecycle methods allow you to tap into the component's lifecycle and perform specific actions at different stages. Here are some commonly used lifecycle methods in React class components along with examples:
+
+1. `componentDidMount`: This method is called immediately after the component is mounted (inserted into the DOM). It is commonly used for performing initialization tasks, like fetching data from an API or setting up subscriptions. Example:
+
+```jsx
+class MyComponent extends React.Component {
+  componentDidMount() {
+    // Perform tasks after the component is mounted
+    console.log('Component mounted!');
+  }
+
+  render() {
+    // Render component
+    return <div>{/* Component JSX */}</div>;
+  }
+}
+```
+
+2. `componentDidUpdate`: This method is invoked after the component's update has been flushed to the DOM. It is useful for responding to prop or state changes and performing side effects. Example:
+
+```jsx
+class MyComponent extends React.Component {
+  componentDidUpdate(prevProps, prevState) {
+    // Perform tasks after the component updates
+    if (this.props.someProp !== prevProps.someProp) {
+      console.log('Prop "someProp" has changed!');
+    }
+  }
+
+  render() {
+    // Render component
+    return <div>{/* Component JSX */}</div>;
+  }
+}
+```
+
+3. `componentWillUnmount`: This method is called just before the component is unmounted and destroyed. It allows you to perform cleanup tasks like canceling timers, removing event listeners, or unsubscribing from subscriptions. Example:
+
+```jsx
+class MyComponent extends React.Component {
+  componentWillUnmount() {
+    // Perform cleanup tasks before the component is unmounted
+    console.log('Component will unmount!');
+  }
+
+  render() {
+    // Render component
+    return <div>{/* Component JSX */}</div>;
+  }
+}
+```
+
+4. `shouldComponentUpdate`: This method is used to optimize rendering performance by controlling whether the component should update or not. By default, React re-renders the component whenever there is a change in props or state. However, `shouldComponentUpdate` allows you to prevent unnecessary re-renders. Example:
+
+```jsx
+class MyComponent extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    // Perform a conditional check to determine if the component should update
+    if (this.props.someProp !== nextProps.someProp) {
+      return true; // Allow the component to update
+    }
+    return false; // Prevent the component from updating
+  }
+
+  render() {
+    // Render component
+    return <div>{/* Component JSX */}</div>;
+  }
+}
+```
+
+These are just a few examples of commonly used lifecycle methods in React class components. It's worth noting that with the introduction of React Hooks in functional components, there are alternatives to achieve similar functionality without using class components and lifecycle methods.
+
+<a href="#top1"> Back to top &#8593;</a>
+
+## 12. <a id="12">What is the significance of keys in React lists?</a>
 **answer:-** The significance of keys in React lists can be better understood with an example. Let's say we have a component that renders a list of items fetched from an API. Each item in the list has a unique `id` property. Here's how the component might look:
 
 ```jsx
@@ -681,7 +757,7 @@ In summary, using keys in React lists provides efficient updates, optimized rend
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## 12. <a id="12">How do you handle forms in React? Explain controlled and uncontrolled components with example.</a>
+## 13. <a id="13">How do you handle forms in React? Explain controlled and uncontrolled components with example.</a>
 **example:-** In React, forms can be handled using either controlled components or uncontrolled components. Let's explore both approaches with examples:
 
 1. **Controlled Components**:
