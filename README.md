@@ -1,7 +1,6 @@
 # react-interview-question
 Soon you guys will find all the important react interview questions
 
-Sure! Here's the converted list of questions in the requested pattern:
 <span id="top1"></span> 
 1. <a href="#1">How do you create a React component? Explain the difference between functional and class components. </a>
 2. <a href="#2">Explain react lifecycle method?</a>
