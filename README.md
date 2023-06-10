@@ -219,7 +219,7 @@ export default MyComponent;
 
 Both functional and class components can be used in React applications, but functional components are favored in modern React development due to their simplicity and the introduction of React hooks, which allow functional components to handle state and lifecycle behavior effectively.
 
-<a href="#top1"> Back to top &#8593</a>
+<a href="#top1"> Back to top &#8593;</a>
 ## 2. <a id="2"> Explain react lifecycle method?</a>
 **Answer:-** React lifecycle methods are special methods that are automatically called at different stages of a component's life cycle. They provide hooks for executing code at specific points in the component's lifecycle, such as when it is mounted, updated, or unmounted. React has three main phases in a component's lifecycle: Mounting, Updating, and Unmounting.
 
