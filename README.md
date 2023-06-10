@@ -1055,7 +1055,7 @@ Using Error Boundaries helps isolate and handle errors within specific component
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## 17. <a href="#17">What is React Router and how does it help with routing in a React application?</a>
+## 17. <a id="17">What is React Router and how does it help with routing in a React application?</a>
 **answer:-** React Router is a popular routing library for React applications. It provides a declarative way to handle navigation and routing in a single-page application (SPA). React Router allows you to define different routes and render specific components based on the current URL, enabling navigation between different views without a full page refresh.
 
 Here's an example that illustrates the usage of React Router:
