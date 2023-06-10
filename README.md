@@ -2,18 +2,18 @@
 Soon you guys will find all the important react interview questions
 
 Sure! Here's the converted list of questions in the requested pattern:
-1. <a href="#1" id="1" >How do you create a React component? Explain the difference between functional and class components. </a>
-2. <a href="#" id="2" >Explain react lifecycle method?</a>
-3. <a href="#" id="3" >explain react lifecycle method with an example?</a>
-4. <a href="#" id="4" >explain react lifecycle method in functional component?</a>
-5. <a href="#" id="5" >What is React and what are its key features?</a>
-6. <a href="#" id="6" >Explain the Virtual DOM and its advantages in React.</a>
-7. <a href="#" id="7" >What is JSX in React? How does it differ from regular JavaScript?</a>
-8. <a href="#" id="8" >How do you create a React component? Explain the difference between functional and class components.</a>
-9. <a href="#" id="9" >What are props in React? How are they used to pass data between components?</a>
-10. <a href="#" id="10" >Describe the concept of state in React. How is it different from props?</a>
-11. <a href="#" id="11" >What is the purpose of lifecycle methods in React? Can you name a few of them?</a>
-12. <a href="#" id="12" >What is the significance of keys in React lists?</a>
+1. <a href="#1">How do you create a React component? Explain the difference between functional and class components. </a>
+2. <a href="#2">Explain react lifecycle method?</a>
+3. <a href="#3">explain react lifecycle method with an example?</a>
+4. <a href="#4">explain react lifecycle method in functional component?</a>
+5. <a href="#5">What is React and what are its key features?</a>
+6. <a href="#6">Explain the Virtual DOM and its advantages in React.</a>
+7. <a href="#7">What is JSX in React? How does it differ from regular JavaScript?</a>
+8. <a href="#8"How do you create a React component? Explain the difference between functional and class components.</a>
+9. <a href="#9">What are props in React? How are they used to pass data between components?</a>
+10. <a href="#10">Describe the concept of state in React. How is it different from props?</a>
+11. <a href="#11">What is the purpose of lifecycle methods in React? Can you name a few of them?</a>
+12. <a href="#12">What is the significance of keys in React lists?</a>
 13. <a href="#" id="13" >How do you handle forms in React? Explain controlled and uncontrolled components.</a>
 14. <a href="#" id="14" >What are React hooks? Can you name a few commonly used hooks?</a>
 15. <a href="#" id="15" >Explain the concept of React context and when would you use it.</a>
@@ -146,7 +146,7 @@ Sure! Here's the converted list of questions in the requested pattern:
 138. <a href="#" id="138">Explain the concept of React's suspense with data fetching and how it can be used to handle loading states.</a>
 139. <a href="#" id="139">How do you handle routing in a React application when you need to pass parameters or query strings?</a>
 140. <a href="#" id="140">Describe the concept of React's strict mode and how it can help catch potential issues during development.</a>
-## 1. <a href="#" id="1">How do you create a React component? Explain the difference between functional and class components.</a>
+## 1. <a id="1">How do you create a React component? Explain the difference between functional and class components.</a>
 **answer:-** To create a React component, you can follow these steps:
 
 1. Decide whether you want to create a functional or class component.
@@ -219,7 +219,7 @@ export default MyComponent;
 Both functional and class components can be used in React applications, but functional components are favored in modern React development due to their simplicity and the introduction of React hooks, which allow functional components to handle state and lifecycle behavior effectively.
 
 
-## 2. Explain react lifecycle method?
+## 2. <a id="2"> Explain react lifecycle method?</a>
 **Answer:-** React lifecycle methods are special methods that are automatically called at different stages of a component's life cycle. They provide hooks for executing code at specific points in the component's lifecycle, such as when it is mounted, updated, or unmounted. React has three main phases in a component's lifecycle: Mounting, Updating, and Unmounting.
 
 1. Mounting:
