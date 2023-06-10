@@ -852,7 +852,7 @@ In summary, using keys in React lists provides efficient updates, optimized rend
 
 <a href="#top1"> Back to top &#8593;</a>
 
-## <a id="14">What are React hooks? Can you name a few commonly used hooks?</a>
+## <a id="14">14. What are React hooks? Can you name a few commonly used hooks?</a>
 **answer:-** React hooks are functions that allow functional components to have state and lifecycle features, which were traditionally available only in class components. They provide a way to write reusable logic and manage component state without the need for class components.
 
 Here are a few commonly used React hooks:
