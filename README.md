@@ -1225,6 +1225,6 @@ In this example, the `PrivateRoute` component acts as a guard for the `/dashboar
 
 React Router provides many other features, including query parameters, route transitions, code splitting, and more. It is a powerful and flexible library for handling routing in React applications, enabling you to create rich and interactive user experiences.
 
-<a href="https://reactrouter.com/en/main/start/overview" target="_blank" rel="noopener noreferrer"> For more understanding see this documentation</a> 
+<a href="https://reactrouter.com/en/main/start/overview" target="_blank"> For more understanding see this documentation</a> 
 
 <a href="#top1"> Back to top &#8593;</a>
