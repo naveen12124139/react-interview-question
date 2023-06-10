@@ -2,7 +2,7 @@
 Soon you guys will find all the important react interview questions
 
 Sure! Here's the converted list of questions in the requested pattern:
-1. <a href="#" id="1" >How do you create a React component? Explain the difference between functional and class components. </a>
+1. <a href="#1" id="1" >How do you create a React component? Explain the difference between functional and class components. </a>
 2. <a href="#" id="2" >Explain react lifecycle method?</a>
 3. <a href="#" id="3" >explain react lifecycle method with an example?</a>
 4. <a href="#" id="4" >explain react lifecycle method in functional component?</a>
@@ -146,7 +146,7 @@ Sure! Here's the converted list of questions in the requested pattern:
 138. <a href="#" id="138">Explain the concept of React's suspense with data fetching and how it can be used to handle loading states.</a>
 139. <a href="#" id="139">How do you handle routing in a React application when you need to pass parameters or query strings?</a>
 140. <a href="#" id="140">Describe the concept of React's strict mode and how it can help catch potential issues during development.</a>
-## 1. <a href="#1">How do you create a React component? Explain the difference between functional and class components.</a>
+## 1. <a href="#" id="1">How do you create a React component? Explain the difference between functional and class components.</a>
 **answer:-** To create a React component, you can follow these steps:
 
 1. Decide whether you want to create a functional or class component.
