@@ -851,3 +851,93 @@ In summary, using keys in React lists provides efficient updates, optimized rend
    Uncontrolled components are useful in situations where you want to rely on the browser's default behavior for form handling, or when you have a large form where controlled components might introduce unnecessary complexity.
 
 <a href="#top1"> Back to top &#8593;</a>
+
+## <a id="14">What are React hooks? Can you name a few commonly used hooks?</a>
+**answer:-** React hooks are functions that allow functional components to have state and lifecycle features, which were traditionally available only in class components. They provide a way to write reusable logic and manage component state without the need for class components.
+
+Here are a few commonly used React hooks:
+
+1. `useState`: This hook allows you to add state to a functional component. It returns an array with two elements: the current state value and a function to update that value. Example:
+
+```jsx
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+2. `useEffect`: This hook enables you to perform side effects in a functional component. It takes a function as its first argument, which will be executed after every render. You can also specify dependencies as a second argument to control when the effect should run. Example:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Fetch data from an API
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => {
+        // Update component state with fetched data
+        setData(data);
+      });
+  }, []); // Empty dependency array to run effect only once
+
+  return <div>{/* Component JSX */}</div>;
+}
+```
+
+3. `useContext`: This hook allows you to access the value of a React context in a functional component. It takes a context object created by `React.createContext` and returns the current context value. Example:
+
+```jsx
+import React, { useContext } from 'react';
+
+const MyContext = React.createContext();
+
+function MyComponent() {
+  const contextValue = useContext(MyContext);
+
+  return <div>{/* Component JSX */}</div>;
+}
+```
+
+4. `useReducer`: This hook is an alternative to `useState` for managing more complex state that involves multiple actions. It returns the current state and a dispatch function to trigger state updates based on specified actions. Example:
+
+```jsx
+import React, { useReducer } from 'react';
+
+function counterReducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error('Unsupported action');
+  }
+}
+
+function MyComponent() {
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+    </div>
+  );
+}
+```
+
+These are just a few examples of commonly used React hooks. React provides several other hooks like `useCallback`, `useMemo`, and `useRef`, each serving specific purposes to enhance functional components. Hooks enable developers to write cleaner and more modular code by separating concerns and reusing logic across components.
+<a href="#top1"> Back to top &#8593;</a>
