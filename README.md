@@ -21,7 +21,7 @@ Soon you guys will find all the important react interview questions
 17. <a href="#17">What is React Router and how does it help with routing in a React application?</a>
 18. <a href="#18">Explain the concept of controlled and uncontrolled components in React.</a>
 19. <a href="#19">What are some performance optimization techniques in React?</a>
-20. <a href="#20">How do you handle component communication in React? Can you explain the concept of lifting state up?</a>
+20. <a href="#20"> explain the concept of lifting state up?</a>
 21. <a href="#21" id="21" >What is the significance of React Fragments? When and why would you use them?</a>
 22. <a href="#22" id="22" >What are Higher-Order Components (HOCs)? How do they work in React?</a>
 23. <a href="#23" id="23" >How does React differ from other JavaScript frameworks like Angular or Vue.js?</a>
@@ -1323,3 +1323,79 @@ const memoizedValue = useMemo(() => {
 By employing these techniques, you can improve the performance of your React applications and create a more responsive user experience. However, it's important to note that optimization efforts should
 
 <a href="#top1"> Back to top &#8593;</a>
+
+## 20. <a href="#20"> explain the concept of lifting state up?</a>
+**answer:-** Certainly! The concept of "lifting state up" in React involves moving the state from a child component to its parent component to facilitate sharing and synchronization of data. Let's explore an example to illustrate how lifting state up works.
+
+Consider a simple application that displays a temperature converter, allowing the user to input a temperature value in either Celsius or Fahrenheit and displaying the converted value in both units.
+
+Here's an implementation of the temperature converter using separate child components for input and display:
+
+```jsx
+import React, { useState } from 'react';
+
+function CelsiusInput({ celsius, onCelsiusChange }) {
+  const handleChange = (event) => {
+    onCelsiusChange(event.target.value);
+  };
+
+  return (
+    <div>
+      <label>Celsius:</label>
+      <input type="number" value={celsius} onChange={handleChange} />
+    </div>
+  );
+}
+
+function FahrenheitInput({ fahrenheit, onFahrenheitChange }) {
+  const handleChange = (event) => {
+    onFahrenheitChange(event.target.value);
+  };
+
+  return (
+    <div>
+      <label>Fahrenheit:</label>
+      <input type="number" value={fahrenheit} onChange={handleChange} />
+    </div>
+  );
+}
+
+function TemperatureConverter() {
+  const [celsius, setCelsius] = useState('');
+  const [fahrenheit, setFahrenheit] = useState('');
+
+  const handleCelsiusChange = (value) => {
+    setCelsius(value);
+    setFahrenheit((value * 9) / 5 + 32);
+  };
+
+  const handleFahrenheitChange = (value) => {
+    setFahrenheit(value);
+    setCelsius(((value - 32) * 5) / 9);
+  };
+
+  return (
+    <div>
+      <CelsiusInput celsius={celsius} onCelsiusChange={handleCelsiusChange} />
+      <FahrenheitInput
+        fahrenheit={fahrenheit}
+        onFahrenheitChange={handleFahrenheitChange}
+      />
+      <p>Celsius: {celsius}</p>
+      <p>Fahrenheit: {fahrenheit}</p>
+    </div>
+  );
+}
+
+export default TemperatureConverter;
+```
+
+In this example, we have two child components: `CelsiusInput` and `FahrenheitInput`. Each input component represents an input field for the respective temperature unit. The `TemperatureConverter` component is the parent component that owns the state and passes it down to the child components.
+
+The state includes `celsius` and `fahrenheit` values, which are initially empty strings. Whenever the user enters a value in either input field, the corresponding change handler (`handleCelsiusChange` or `handleFahrenheitChange`) is called, updating the state in the parent component.
+
+By lifting the state up to the `TemperatureConverter` component, both child components have access to the shared state through props. Whenever the state is updated, the input values and the converted temperatures are automatically synchronized and displayed in real-time.
+
+By using this approach, the parent component acts as the source of truth for the shared state, and any changes made to the state are propagated down to the child components. This enables effective communication and synchronization of data between components.
+
+Lifting state up is particularly useful when multiple components need access to the same data or when changes in one component need to be reflected in another. It promotes reusability, separation of concerns, and helps maintain a single source of truth for the shared data.
